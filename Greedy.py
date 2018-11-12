@@ -8,9 +8,10 @@
 
 import math 
 import time
-from MyFuncTool import *
+from MyFuncTool import GetData,ResultShow,draw
 
-"""
+def GreedyMethond(CityNum,Dist):
+	"""
 	函数名：GreedyMethond(CityNum,Dist)
 	函数功能：	贪心策略算法核心
 		输入	1 	CityNum：城市数量
@@ -18,8 +19,7 @@ from MyFuncTool import *
 		输出	1 Cumulative_Path：最优路径长
 			2 Already_Visited_City：最优路径
 	其他说明：无
-"""
-def GreedyMethond(CityNum,Dist):
+	"""
 	Already_Visited_City=[]					#Already_Visited_City:已经遍历过的城市
 	Cumulative_Path=0						#Cumulative_Path:目前所走城市的累积路径长
 	Already_Visited_City.append(0)			#从城市0出发						
@@ -39,7 +39,7 @@ def GreedyMethond(CityNum,Dist):
 
 ##############################程序入口#########################################
 if __name__ == "__main__":
-	Position,CityNum,Dist = GetData("./data/TSP10cities.tsp")
+	Position,CityNum,Dist = GetData("./data/TSP25cities.tsp")
 
 	start = time.clock()				#程序计时开始
 	Min_Path,BestPath=GreedyMethond(CityNum,Dist)	#调用贪心算法
